@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Como Vender Online Sem Aparecer - Ebook</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Arial', sans-serif;
+      background:#000;
+      color:#ddd;
+      position: relative;
+      min-height: 100vh;
+      padding-bottom: 140px;
+    }
+    .container { max-width:1100px; margin:0 auto; padding:0 20px; }
+    header {
+      background: linear-gradient(to right, #a22054, #d6336c);
+      color:#fff;
+      padding:40px 20px;
+      text-align:center;
+      border-bottom-left-radius:45px;
+      border-bottom-right-radius:45px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.8);
+    }
+    header h1 { font-size:2.8rem; margin-bottom:10px; }
+    header p { font-size:1.2rem; margin-bottom:10px; }
+    .price {
+      margin-bottom: 15px;
+    }
+    .price span:first-child {
+      text-decoration: line-through;
+      color:#aaa;
+      font-size:1.5rem;
+      margin-right:10px;
+    }
+    .price span:last-child {
+      color:#ff3399;
+      font-weight:bold;
+      font-size:2.4rem;
+    }
+    .btn-primary {
+      background:#ff3399;
+      color:#fff;
+      padding:16px 40px;
+      font-size:1.1rem;
+      border-radius:40px;
+      text-decoration:none;
+      display:inline-block;
+      margin-top:15px;
+      box-shadow:0 6px 20px rgba(255,51,153,0.9);
+      transition: background-color 0.3s ease;
+      position: relative;
+      z-index: 10;
+    }
+    .btn-primary:hover { background:#cc297a; }
+    .section {
+      padding:40px 20px;
+      background:#111;
+      margin:40px 0;
+      border-radius:20px;
+      box-shadow:0 6px 15px rgba(0,0,0,0.8);
+      color:#ddd;
+    }
+    .section h2 {
+      color:#ff3399;
+      margin-bottom:20px;
+      font-size:1.8rem;
+    }
+    .section p {
+      font-size:1.1rem;
+      color:#ccc;
+      margin-bottom:15px;
+      line-height:1.5;
+    }
+    .depoimento {
+      background:#222;
+      border-radius:15px;
+      padding:20px 25px 20px 60px;
+      margin:20px 0;
+      font-style: italic;
+      color:#eee;
+      box-shadow: 0 0 15px #ff3399aa;
+      position: relative;
+    }
+    .stars {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #ffb347;
+      font-size: 1.3rem;
+      user-select:none;
+    }
+    .icon-list {
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      justify-content:space-around;
+    }
+    .icon-item {
+      flex:1 1 200px;
+      text-align:center;
+      color:#ddd;
+    }
+    .icon-item img {
+      height:60px;
+      margin-bottom:10px;
+      filter: drop-shadow(0 0 3px #ff3399);
+    }
+    .faq-item {
+      margin-bottom:20px;
+    }
+    .faq-item h3 {
+      color:#ff3399;
+      margin-bottom:5px;
+      font-size:1.1rem;
+    }
+    .faq-item p {
+      color:#ccc;
+      line-height:1.4;
+    }
+    .urgency {
+      text-align:center;
+      padding:30px;
+      background:#330a00;
+      border:2px dashed #ff3399;
+      border-radius:20px;
+      margin:30px 0;
+      color:#ff3399;
+    }
+    .urgency h2 {
+      color:#ff7fbf;
+      margin-bottom:10px;
+    }
+    .urgency .countdown {
+      font-size:2rem;
+      font-weight:bold;
+      color:#ffb3c6;
+    }
+    .form-section {
+      background:#111;
+      padding:40px 20px;
+      border-radius:20px;
+      text-align:center;
+      margin:40px 0;
+    }
+    .form-section input {
+      padding:15px;
+      width:80%;
+      max-width:400px;
+      margin:10px auto;
+      display:block;
+      border:1px solid #555;
+      border-radius:10px;
+      font-size:1rem;
+      background:#222;
+      color:#eee;
+    }
+    .form-section input::placeholder {
+      color:#999;
+    }
+    .form-section button {
+      background:#ff3399;
+      color:#fff;
+      padding:15px 30px;
+      border:none;
+      border-radius:30px;
+      font-size:1.1rem;
+      cursor:pointer;
+      margin-top:10px;
+      transition: background-color 0.3s ease;
+    }
+    .form-section button:hover {
+      background:#cc297a;
+    }
+    footer {
+      text-align:center;
+      padding:30px 20px 60px;
+      color:#aaa;
+      font-size:.9rem;
+      background:#111;
+      position: relative;
+    }
+    /* Botão WhatsApp flutuante */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 100;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      background-color: #128c4a;
+    }
+    /* Selos perto do botão */
+    .security-seals {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      color: #eee;
+    }
+    .security-seal {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      border: 1px solid #ff3399;
+      padding: 8px 12px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #ff3399aa;
+      background: #222;
+      user-select:none;
+    }
+    .security-seal svg {
+      width: 20px;
+      height: 20px;
+      fill: #ff3399;
+    }
+    .students-counter {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #ff3399;
+      margin-top: 15px;
+      font-weight: bold;
+      text-shadow: 0 0 5px #ff3399;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size:2rem; }
+      header p { font-size:1rem; }
+      .icon-list { flex-direction:column; align-items:center; }
+      .icon-item { flex:1 1 100%; }
+      .form-section input, .form-section button { width:100%; }
+      .security-seals { justify-content: center; }
+    }
+  </style>
+  <script>
+    function startCountdown(duration, display) {
+      var timer = duration, minutes, seconds;
+      setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          timer = 0;
+        }
+      }, 1000);
+    }
+
+    window.onload = function () {
+      var countdown = document.querySelector('.countdown');
+      startCountdown(600, countdown);
+    };
+  </script>
+</head>
+<body>
+  <header class="container">
+    <h1>Como Vender Online Sem Aparecer</h1>
+    <p>Guia prático para criar autoridade e vender produtos digitais sem mostrar seu rosto</p>
+    <div class="price">
+      <span>R$ 97,00</span>
+      <span>R$ 47,00</span>
+    </div>
+    <a href="https://wa.me/5567991063726?text=Quero%20o%20ebook%20Como%20Vender%20Online%20Sem%20Aparecer" target="_blank" class="btn-primary" aria-label="Comprar ebook agora">Quero Comprar Agora</a>
+    
+    <div class="security-seals" aria-label="Selos de segurança">
+      <div class="security-seal" title="Pagamento Seguro">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.25 3.75 10 9 11 5.25-1 9-5.75 9-11V5l-9-4z"/></svg>
+        Pagamento 100% Seguro
+      </div>
+      <div class="security-seal" title="Privacidade Protegida">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.25 3.75 10 9 11 5.25-1 9-5.75 9-11V5l-9-4z"/></svg>
+        Privacidade Garantida
+      </div>
+      <div class="security-seal" title="Garantia de Satisfação">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.25 3.75 10 9 11 5.25-1 9-5.75 9-11V5l-9-4z"/></svg>
+        Satisfação Garantida
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="section">
+      <h2>Por que este ebook é para você?</h2>
+      <p>Se você quer faturar na internet mas tem medo de se expor, esse guia foi feito para você.</p>
+      <p>Mostramos como escolher nichos lucrativos, criar produtos e funis de venda sem aparecer, tudo passo a passo.</p>
+      <a href="https://wa.me/5567991063726?text=Quero%20o%20ebook%20Como%20Vender%20Online%20Sem%20Aparecer" target="_blank" class="btn-primary" aria-label="Comprar ebook agora">Quero Comprar Agora</a>
+    </div>
+
+    <div class="section">
+      <h2>O que você vai aprender</h2>
+      <p>- Como escolher um nicho lucrativo para vender sem aparecer</p>
+      <p>- Como criar produtos digitais (ebooks, slides, podcast) sem mostrar o rosto</p>
+      <p>- Ferramentas e plataformas para automatizar vendas e captar clientes</p>
+      <p>- Estratégias de marketing que funcionam para quem não quer se expor</p>
+      <p>- Como criar funis de venda lucrativos e escaláveis</p>
+      <a href="https://wa.me/5567991063726?text=Quero%20o%20ebook%20Como%20Vender%20Online%20Sem%20Aparecer" target="_blank" class="btn-primary" aria-label="Comprar ebook agora">Quero Comprar Agora</a>
+    </div>
+
+    <div class="section">
+      <h2>Como Funciona</h2>
+      <div class="icon-list" aria-label="Passos para usar o ebook">
+        <div class="icon-item">
+          <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="Passo 1: Baixar o ebook" />
+          <p>Baixe o guia completo</p>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Passo 2: Seguir o passo a passo" />
+          <p>Siga o passo a passo no seu ritmo</p>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Passo 3: Comece a vender" />
+          <p>Venda seus produtos digitais sem aparecer</p>
+        </div>
+      </div>
+      <a href="https://wa.me/5567991063726?text=Quero%20o%20ebook%20Como%20Vender%20Online%20Sem%20Aparecer" target="_blank" class="btn-primary" aria-label="Comprar ebook agora">Quero Comprar Agora</a>
+    </div>
+
+    <div class="section">
+      <h2>Bônus Exclusivos</h2>
+      <p>✔ Checklist completo de lançamento digital para não esquecer nada</p>
+      <p>✔ Modelo personalizável de página de vendas</p>
+      <p>✔ Mini treinamento em vídeo com estratégias de tráfego pago (sem aparecer)</p>
+      <a href="https://wa.me/5567991063726?text=Quero%20o%20ebook%20Como%20Vender%20Online%20Sem%20Aparecer" target="_blank" class="btn-primary" aria-label="Comprar ebook agora">Quero Comprar Agora</a>
+    </div>
+
+    <div class="section">
+      <h2>Prova Social</h2>
+      <p class="students-counter">+ 523 alunos já aplicaram esse método com sucesso!</p>
+
+      <div class="depoimento">
+        <div class="stars" aria-label="Cinco estrelas">★★★★★</div>
+        "Usei as dicas e hoje vendo meu ebook sem nunca ter aparecido." – <strong>Ana Paula</strong>
+      </div>
+
+      <div class="depoimento">
+        <div class="stars" aria-label="Cinco estrelas">★★★★★</div>
+        "Montei meu funil com o modelo e comecei a ter vendas em 1 semana." – <strong>Lucas Mendes</strong>
+      </div>
+
+      <div class="depoimento">
+        <div class="stars" aria-label="Cinco estrelas">★★★★★</div>
+        "Com o método, consegui minhas primeiras vendas reais sem precisar aparecer." – <strong>Mariana Silva</strong>
+      </div>
+
+      <div class="depoimento">
+        <div class="stars" aria-label="Cinco estrelas">★★★★★</div>
+        "Testei e comprovei: funciona mesmo! Recomendo para quem quer começar sem exposição." – <strong>Eduardo Costa</strong>
+      </div>
+
+      <div class="depoimento">
+        <div class="stars" aria-label="Cinco estrelas">★★★★★</div>
+        "Ganhei autoridade e clientes, tudo sem mostrar meu rosto. Prova real!" – <strong>Juliana Ferreira</strong>
+      </div>
+      <a href="https://wa.me/5567991063726?text=Quero%20o%20ebook%20Como%20Vender%20Online%20Sem%20Aparecer" target="_blank" class="btn-primary" aria-label="Comprar ebook agora">Quero Comprar Agora</a>
+    </div>
+
+    <div class="section urgency" role="alert" aria-live="polite">
+      <h2>Oferta por tempo limitado!</h2>
+      <p>Garanta seu acesso com desconto antes que acabe:</p>
+      <div class="countdown" aria-label="Tempo restante para oferta">10:00</div>
+      <a href="https://wa.me/5567991063726?text=Quero%20aproveitar%20a%20oferta%20do%20ebook" target="_blank" class="btn-primary" aria-label="Comprar ebook agora">Aproveitar Agora</a>
+
+      <p id="securityMessage" style="margin-top:10px; font-size:0.9rem; color:#ffb3c6;">
+        Compra 100% segura e entrega imediata via WhatsApp
+      </p>
+    </div>
+
+    <div class="form-section" aria-label="Formulário de inscrição para bônus">
+      <h2>Quer receber um presente grátis?</h2>
+      <p>Deixe seu e-mail e receba um bônus exclusivo!</p>
+      <form onsubmit="alert('Obrigado! O bônus será enviado para seu e-mail.'); return false;">
+        <input type="email" placeholder="Digite seu e-mail" required aria-required="true" />
+        <button type="submit">Quero Receber</button>
+      </form>
+    </div>
+
+    <div class="section" aria-label="Perguntas frequentes">
+      <h2>Perguntas Frequentes</h2>
+      <div class="faq-item">
+        <h3>Preciso aparecer para aplicar o que está no ebook?</h3>
+        <p>Não. Todo o conteúdo é pensado para que você possa vender online e construir autoridade sem se expor.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Por onde vou receber o material?</h3>
+        <p>Após a compra, você receberá o ebook diretamente no seu e-mail e via WhatsApp.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Posso parcelar o pagamento?</h3>
+        <p>O pagamento é único e feito via transferência ou PIX para facilitar e acelerar sua compra.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Tenho suporte se precisar de ajuda?</h3>
+        <p>Sim! Você terá acesso a um grupo exclusivo para tirar dúvidas e compartilhar resultados.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="security-seals" aria-label="Selos de segurança do rodapé">
+      <div class="security-seal" title="Pagamento Seguro">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.25 3.75 10 9 11 5.25-1 9-5.75 9-11V5l-9-4z"/></svg>
+        Pagamento 100% Seguro
+      </div>
+      <div class="security-seal" title="Privacidade Protegida">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.25 3.75 10 9 11 5.25-1 9-5.75 9-11V5l-9-4z"/></svg>
+        Privacidade Garantida
+      </div>
+      <div class="security-seal" title="Garantia de Satisfação">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.25 3.75 10 9 11 5.25-1 9-5.75 9-11V5l-9-4z"/></svg>
+        Satisfação Garantida
+      </div>
+    </div>
+    <p style="margin-top: 15px;">© 2025 Todos os direitos reservados.</p>
+  </footer>
+
+  <a 
+    href="https://wa.me/5567991063726?text=Quero%20saber%20mais%20sobre%20o%20ebook%20Como%20Vender%20Online%20Sem%20Aparecer" 
+    class="whatsapp-float" 
+    target="_blank" 
+    aria-label="Abrir WhatsApp para contato"
+    rel="noopener noreferrer"
+  >
+    &#x2706;
+  </a>
+</body>
+</html>
